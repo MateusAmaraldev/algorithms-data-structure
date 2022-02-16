@@ -38,16 +38,7 @@ queue.enqueue('mbappe');
 queue.enqueue('neymar');
 queue.enqueue('messi');
 
-queue.print();
 
-queue.dequeue();
-
-queue.print();
-
-console.log(queue.front());
-
-queue.size();
-queue.print();
 
 
 

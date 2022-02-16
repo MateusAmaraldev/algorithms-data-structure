@@ -7,17 +7,21 @@ class HotPotato{
     this.queue = new Queue();
   }
 
-  hotPotato=()=>{
+  hotPotato=()=>{ 
     for (let i = 0; i < this.nameList.length; i++) {
       this.queue.enqueue(this.nameList[i]);
     }
     let eliminated = '';
 
-    while (this.queue.size() >1){
-      for (let j = 0; j < this.number; j++) {
-        this.queue.enqueue(this.queue.dequeue());
+    while (this.queue.size() >1){ //4
+      for (let j = 0; j < this.number; j++) {//6
+        this.queue.enqueue(this.queue.dequeue()); //['messi']
       }
-      eliminated = this.queue.dequeue();
+      eliminated = this.queue.dequeue(); /*
+      'vinijr',
+      'neymar'
+      'mateus',
+      */
       console.log(eliminated,'was eliminated');
     }
     return this.queue.dequeue();
@@ -34,4 +38,4 @@ let teste = new HotPotato(players,7);
 
 let result = teste.hotPotato();
 
-console.log(result);
+console.log('winner: ',result);
