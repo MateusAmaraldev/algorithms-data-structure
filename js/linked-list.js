@@ -37,25 +37,26 @@ class LinkedList {
 
   }
 
-  removeAt = (position) => {
-    let current = this.head;
+  removeAt = (position) => { //1
+    let current = this.head; //joao
     let previous;
     let index = 0;
-    if (position > -1 && position < this.length) {
+    if (position > -1 && position < this.length) { //true
 
-      if (position === 0) {
+      if (position === 0) { //false
         this.head = current.next;
       }
       else {
-        while (index++ < position) {
-          previous = current;
-          current = current.next;
+        while (index++ < position) { // 0 < 1 
+          console.log(index);
+          previous = current; //joao
+          current = current.next; //jose
         }
-        previous.next = current.next;
+        previous.next = current.next; //joao -> maria
       }
-      this.length--;
+      this.length--; //2
 
-      return current.element;
+      return current.element; //jose
     }
 
     return null;
