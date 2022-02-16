@@ -11,26 +11,25 @@ class LinkedList {
     this.head = null;
     this.length = 0;
   }
-  append = (element) => {
-    this.nodeClass = new Node(element);
+  append = (element) => { //maria
+    this.nodeClass = new Node(element); //maria next = null
     let current;
+  
 
-    if (this.head === null) {
+    if (this.head === null) { //false
       this.head = this.nodeClass;
     }
     else {
-
-      current = this.head;
-
-      while (current.next) {
-        current = current.next;
+      current = this.head; //joao
+      while (current.next) { //true
+        current = current.next; //joao -> jose
 
       }
 
-      current.next = this.nodeClass;
+      current.next = this.nodeClass; //jose -> maria
 
     }
-    this.length = this.length + 1;
+    this.length = this.length + 1; //3
   }
 
   insert = (position, element) => {
