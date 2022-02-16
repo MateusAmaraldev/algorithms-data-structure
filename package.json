@@ -1,0 +1,21 @@
+{
+  "name": "algorithms-data-structure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "queueHotPotato.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MateusAmaraldev/algorithms-data-structure.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MateusAmaraldev/algorithms-data-structure/issues"
+  },
+  "homepage": "https://github.com/MateusAmaraldev/algorithms-data-structure#readme"
+}
