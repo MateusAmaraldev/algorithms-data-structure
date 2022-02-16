@@ -14,7 +14,7 @@ class LinkedList {
   append = (element) => { //maria
     this.nodeClass = new Node(element); //maria next = null
     let current;
-  
+
 
     if (this.head === null) { //false
       this.head = this.nodeClass;
@@ -32,8 +32,32 @@ class LinkedList {
     this.length = this.length + 1; //3
   }
 
-  insert = (position, element) => {
+  insert = (position, element) => { //1, vini
 
+    if (position >= 0 && position <= this.length) { //true
+      this.nodeClass = new Node(element); //vini next =null
+      let current = this.head; //joao
+      let previous; //undefined
+      let index = 0;
+
+      if (position === 0) { // false
+        this.nodeClass.next = current;
+        this.head = this.nodeClass;
+      }
+      else {
+        while (index++ < position) { // 0 < 1
+          previous = current; //jose
+          current = current.next;//maria
+        }
+        this.nodeClass.next = current; //maria
+        previous.next = this.nodeClass;//vini jose...
+      }
+      this.length++;
+
+      return true;
+    }
+
+    return false;
   }
 
   removeAt = (position) => { //1
@@ -103,7 +127,11 @@ linkedList.append('maria');
 
 linkedList.print();
 
-linkedList.removeAt(1);
+// linkedList.removeAt(1);
 
- linkedList.print();
+// linkedList.insert(0,'mateus');
+linkedList.insert(1, 'vini');
+
+
+linkedList.print();
 
