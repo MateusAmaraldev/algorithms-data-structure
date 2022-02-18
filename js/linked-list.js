@@ -87,7 +87,8 @@ class LinkedList {
   }
 
   remove = (element) => {
-
+    let index = this.indexOf(element);
+    return this.removeAt(index);
   }
 
   indexOf = (element) => { //vini
@@ -107,11 +108,15 @@ class LinkedList {
   }
 
   isEmpty = () => {
-
+    return this.length === 0;
   }
 
   size = () => {
+    return this.length;
+  }
 
+  getHead = () => {
+    return this.head;
   }
 
   toString = () => {
@@ -148,3 +153,11 @@ linkedList.insert(1, 'vini');
 linkedList.print();
 
 console.log(linkedList.indexOf('vini'));
+
+console.log(linkedList.remove('maria'));
+
+linkedList.print();
+
+console.log(linkedList.isEmpty());
+console.log(linkedList.getHead());
+console.log(linkedList.size());
