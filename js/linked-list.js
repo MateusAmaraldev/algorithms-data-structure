@@ -90,8 +90,20 @@ class LinkedList {
 
   }
 
-  indexOf = (element) => {
+  indexOf = (element) => { //vini
+    let current  = this.head; //joao(node0)
 
+    let index = 0;
+
+    while (current) { //true
+      if(element === current.element){ //false | true
+        return index;
+      }
+      index++; //0->1
+      current = current.next; //joao -> vini(node1)
+    }
+
+    return -1;
   }
 
   isEmpty = () => {
@@ -135,3 +147,4 @@ linkedList.insert(1, 'vini');
 
 linkedList.print();
 
+console.log(linkedList.indexOf('vini'));
