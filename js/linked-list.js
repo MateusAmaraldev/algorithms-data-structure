@@ -71,7 +71,6 @@ class LinkedList {
       }
       else {
         while (index++ < position) { // 0 < 1 
-          console.log(index);
           previous = current; //joao
           current = current.next; //jose
         }
