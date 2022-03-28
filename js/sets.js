@@ -61,23 +61,73 @@ class Set {
     return unionSet;
   }
 
-  interaction = (otherSet) => {}
+  intersection = (otherSet) => {
+    let intersectionSet = new Set();
+    let values = this.values()  ;
+
+    for (let i = 0; i < values.length; i++) {
+
+      if(otherSet.valueExists(values[i])){
+        intersectionSet.addValue(values[i]);
+      }
+    }
+
+    return intersectionSet;
+  }
+
+  difference = (otherSet) => {
+    let difference = new Set();
+    let values = this.values();
+
+
+    for (let i = 0; i < values.length; i++) {
+
+      if(!otherSet.valueExists(values[i])){
+        intersectionSet.addValue(values[i]);
+      }
+    }
+
+    return difference;
+  }
+
+  subSet = (otherSet) =>{
+    let values = this.values();
+    if(this.size() > otherSet.size()){
+      return false;
+    } 
+
+    for (let i = 0; i < values.length; i++) {
+      if(!otherSet.valueExists(values[i])){
+        return false;
+      }
+    }
+
+    return true;
+
+
+
+  }
 }
 
 let set = new Set();
 
 set.addValue(1);
 set.addValue(2);
-set.addValue(3);
 
 let secondSet = new Set();
 
+secondSet.addValue(1);
+secondSet.addValue(2);
 secondSet.addValue(3);
-secondSet.addValue(4);
-secondSet.addValue(5);
-secondSet.addValue(6);
 
 
-let unionSets = set.union(secondSet);
+let thirdSet = new Set();
 
-console.log(unionSets.values());
+thirdSet.addValue(2);
+thirdSet.addValue(3);
+thirdSet.addValue(4);
+
+
+
+console.log(set.subSet(secondSet));
+console.log(set.subSet(thirdSet));
